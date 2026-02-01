@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Tareas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<div id="modal-detalles" class="overlay" style="display: none;">
+    <div class="welcome-card">
+        <h2 id="det-titulo">Detalles</h2>
+        <div class="user-info">
+            <p><strong>Categoría:</strong> <span id="det-cat"></span></p>
+            <p><strong>Info:</strong> <span id="det-extra"></span></p>
+            <p><strong>Hora:</strong> <span id="det-hora"></span></p>
+        </div>
+        
+        <div class="modal-actions" style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+            <button id="btn-finalizar-modal" style="background: #10b981; color: white; display: none;">
+                FINALIZAR TAREA ✅
+            </button>
+
+            <button id="btn-eliminar-modal" style="background: #eb4d4b; color: white;">
+                ELIMINAR TAREA 🗑️
+            </button>
+
+            <button onclick="cerrarDetalles()" id="btn-cerrar-modal" style="background: #666;">
+                VOLVER
+            </button>
+        </div>
+    </div>
+</div>
+
+    <div id="welcome-overlay" class="overlay" style="display:none;">
+        <div class="welcome-card">
+            <h2>COMPLETAR DATOS</h2>
+            <input type="text" id="setup-nombre" placeholder="Nombre">
+            <input type="text" id="setup-apellido" placeholder="Apellido">
+            <button id="btn-iniciar">INICIAR SISTEMA</button>
+        </div>
+    </div>
+
+    <div id="app-container">
+        <header style="position: relative;">
+            <h1 id="app-title">IA</h1>
+            <p class="subtitle" id="current-date"></p>
+            
+            <div class="notif-badge-top" onclick="abrirHistorialDesdeHeader()">
+                🔔
+            </div>
+
+            <div id="hud-display">
+                <div class="stat"><span class="label">Estado</span><span id="status-display">STANDBY</span></div>
+                <div class="stat"><span class="label">Tareas</span><span id="count-display">0</span></div>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <section id="sec-panel" class="app-section">
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="pendientes">Pendientes</button>
+                    <button class="filter-btn" data-filter="realizadas">Realizadas</button>
+                </div>
+                <div id="lista-tareas"></div>
+            </section>
+
+<section id="sec-nueva" class="app-section" style="display: none;">
+    <div class="input-container-modern">
+        <label class="field-label">Categoría</label>
+        <div class="category-grid">
+            <div class="cat-chip active" data-value="📚 Estudios"><span>📚</span> Estudios</div>
+            <div class="cat-chip" data-value="💪 Salud"><span>💪</span> Salud</div>
+            <div class="cat-chip" data-value="🏠 Hogar"><span>🏠</span> Hogar</div>
+            <div class="cat-chip" data-value="⚡ Otros"><span>⚡</span> Otros</div>
+        </div>
+
+        <div id="campos-dinamicos"></div>
+
+        <div style="margin-top: 15px;">
+            <label class="field-label">Hora límite (Obligatoria)</label>
+            <input type="time" id="input-hora" class="input-modern-time" style="display: block !important;">
+        </div>
+
+        <button id="btn-desplegar">CREAR TAREA 🚀</button>
+    </div>
+</section>
+
+            <section id="sec-config" class="app-section" style="display: none;">
+                <h2 class="config-title">Configuración</h2>
+                <div class="config-card">
+                    <div class="user-info">
+                        <p><strong>Agente:</strong> <span id="user-full-name"></span></p>
+                        <div class="info-item-control">
+                            <label>Idioma</label>
+                            <select id="select-idioma" class="config-select">
+                                <option value="es">Español</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div>
+                        <div class="info-item-control">
+                            <label>Notificaciones</label>
+                            <label class="switch">
+                                <input type="checkbox" id="check-notifications">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <button onclick="cerrarSesion()" class="btn-logout">CERRAR SESIÓN</button>
+                </div>
+            </section>
+
+            <section id="sec-historial" class="app-section" style="display: none;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 0 10px;">
+                    <h2 class="config-title" style="margin:0;">Historial IA</h2>
+                    <button onclick="limpiarHistorial()" style="background:none; border:none; color:#eb4d4b; cursor:pointer; font-weight:bold; font-size: 0.9rem;">BORRAR TODO</button>
+                </div>
+                <div id="lista-historial"></div>
+            </section>
+        </main>
+
+        <nav id="bottom-nav">
+            <button class="nav-item active" data-sec="sec-panel">
+                <div class="nav-icon">📊</div>
+                <span>PANEL</span>
+            </button>
+            <button class="nav-item" data-sec="sec-nueva">
+                <div class="nav-icon">➕</div>
+                <span>NUEVA</span>
+            </button>
+            <button class="nav-item" data-sec="sec-config">
+                <div class="nav-icon">⚙️</div>
+                <span>AJUSTES</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="reminders.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
