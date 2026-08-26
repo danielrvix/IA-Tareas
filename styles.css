@@ -6,6 +6,7 @@
   --text-white: #ffffff;
   --text-dark: #002580;
   --gray-light: #f4f6fa;
+  --gray-border: #e4e6eb;
 }
 
 * {
@@ -17,11 +18,11 @@
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--gray-light);
-  color: #333;
+  color: #1c1e21;
   overflow-x: hidden;
 }
 
-/* --- BANNER SUPERIOR INSTITUCIONAL --- */
+/* --- CINTILLO SUPERIOR --- */
 .top-bar {
   background-color: #ffffff;
   display: flex;
@@ -59,7 +60,6 @@ body {
   flex-direction: column;
 }
 
-/* Formas decorativas de fondo */
 .shape-yellow {
   position: absolute;
   top: -150px;
@@ -92,14 +92,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  flex-wrap: nowrap;
 }
 
 .brand-logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-shrink: 0;
 }
 
 .icon-box {
@@ -121,7 +119,6 @@ body {
   font-size: 1.8rem;
   font-weight: 900;
   letter-spacing: -0.5px;
-  white-space: nowrap;
 }
 
 .nav-links {
@@ -129,7 +126,6 @@ body {
   align-items: center;
   gap: 14px;
   list-style: none;
-  margin: 0 15px;
 }
 
 .nav-links a {
@@ -137,12 +133,6 @@ body {
   text-decoration: none;
   font-weight: 700;
   font-size: 0.85rem;
-  white-space: nowrap;
-  transition: opacity 0.2s;
-}
-
-.nav-links a:hover {
-  opacity: 0.85;
 }
 
 .btn-pill {
@@ -152,19 +142,16 @@ body {
   border-radius: 20px;
   font-weight: 800 !important;
   display: inline-block;
-  white-space: nowrap;
   box-shadow: 0 4px 10px rgba(229, 26, 36, 0.4);
-}
-
-.btn-pill:hover {
-  background-color: #c8131c;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
 }
 
 .social-icons {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-shrink: 0;
 }
 
 .social-icons a {
@@ -180,7 +167,7 @@ body {
   z-index: 10;
 }
 
-/* --- SLIDER Y CONTENIDO DEL BANNER --- */
+/* --- SLIDER HERO --- */
 .slider-container {
   position: relative;
   z-index: 5;
@@ -216,7 +203,6 @@ body {
   line-height: 1.1;
   text-transform: uppercase;
   margin-bottom: 15px;
-  text-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
 .hero-description {
@@ -229,19 +215,14 @@ body {
 .slide-image-content {
   position: relative;
   z-index: 6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .person-img {
   max-height: 340px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
 }
 
-/* Flechas del Slider */
 .arrow-btn {
   position: absolute;
   top: 50%;
@@ -253,17 +234,12 @@ body {
   font-size: 2.4rem;
   cursor: pointer;
   padding: 10px;
-  transition: transform 0.2s;
-}
-
-.arrow-btn:hover {
-  transform: translateY(-50%) scale(1.15);
 }
 
 .arrow-btn.prev { left: 15px; }
 .arrow-btn.next { right: 15px; }
 
-/* --- SECCIÓN PRINCIPAL DE SERVICIOS --- */
+/* --- SERVICIOS --- */
 .services-section {
   padding: 50px 30px;
   text-align: center;
@@ -275,7 +251,6 @@ body {
   font-size: 3rem;
   font-weight: 900;
   margin-bottom: 35px;
-  letter-spacing: -1px;
 }
 
 .cards-container {
@@ -292,13 +267,7 @@ body {
   padding: 25px 20px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid #e2e8f0;
-}
-
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 70, 231, 0.12);
 }
 
 .card-icon {
@@ -328,7 +297,6 @@ body {
   font-weight: 500;
 }
 
-/* --- BOTÓN HAMBURGUESA --- */
 .hamburger-btn {
   display: none;
   background: none;
@@ -337,78 +305,9 @@ body {
   font-size: 1.8rem;
   cursor: pointer;
   z-index: 1001;
-  padding: 5px;
 }
 
-/* --- ESTILOS RESPONSIVE PARA MÓVILES (Menor a 992px) --- */
-@media (max-width: 992px) {
-  .top-bar {
-    padding: 10px 15px;
-  }
-  
-  .top-bar-right {
-    display: none;
-  }
-
-  .hamburger-btn {
-    display: block !important;
-  }
-
-  .social-icons {
-    display: none !important;
-  }
-
-  .navbar {
-    position: relative;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--blue-dark);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 25px 0;
-    margin: 0;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    
-    /* Estado oculto */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-15px);
-    transition: all 0.3s ease-in-out;
-    z-index: 1000;
-    pointer-events: none;
-  }
-
-  /* Estado Visible al hacer clic */
-  .nav-links.active {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateY(0) !important;
-    pointer-events: auto !important;
-  }
-
-  .hero-slide.active {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px 20px;
-  }
-
-  .hero-title {
-    font-size: 1.8rem;
-  }
-
-  .btn-pill {
-    width: 80%;
-    text-align: center;
-  }
-}
-
+/* --- BOTÓN FLOTANTE PERMANENTE --- */
 .float-emergency-btn {
   position: fixed;
   bottom: 25px;
@@ -421,14 +320,369 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 15px rgba(229, 26, 36, 0.5);
+  font-size: 1.6rem;
+  box-shadow: 0 6px 20px rgba(229, 26, 36, 0.5);
   z-index: 999;
+  cursor: pointer;
   animation: pulse-red 2s infinite;
+  border: none;
 }
- /* boton flotante de emergencia*/
+
 @keyframes pulse-red {
   0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 26, 36, 0.7); }
   70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(229, 26, 36, 0); }
   100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 26, 36, 0); }
+}
+
+/* ============================================================
+   MODAL TIPO COMPOSER DE FACEBOOK
+============================================================ */
+.fb-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease-in-out;
+}
+
+.fb-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fb-modal-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 540px;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform: scale(0.92);
+  transition: transform 0.25s ease-in-out;
+  max-height: 90vh;
+}
+
+.fb-modal-overlay.active .fb-modal-card {
+  transform: scale(1);
+}
+
+.fb-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--gray-border);
+  position: relative;
+}
+
+.fb-modal-header h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #050505;
+}
+
+.fb-modal-close {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: #e4e6eb;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #606770;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+.fb-modal-close:hover {
+  background: #d8dadf;
+}
+
+.fb-modal-body {
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fb-user-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fb-user-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--blue-main);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.fb-user-info .name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #050505;
+}
+
+.fb-user-info .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #e7f3ff;
+  color: #1877f2;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-top: 2px;
+}
+
+.fb-incident-selector {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.incident-chip {
+  background: #f0f2f5;
+  border: 1.5px solid transparent;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #050505;
+  transition: all 0.2s;
+}
+
+.incident-chip i {
+  font-size: 1.1rem;
+  color: var(--blue-main);
+}
+
+.incident-chip:hover {
+  background: #e4e6eb;
+}
+
+.incident-chip.selected {
+  background: #e7f3ff;
+  border-color: #1877f2;
+  color: #1877f2;
+}
+
+.incident-chip.selected i {
+  color: #1877f2;
+}
+
+.fb-textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  min-height: 55px;
+  color: #050505;
+}
+
+.fb-textarea::placeholder {
+  color: #8a8d91;
+}
+
+.fb-location-box {
+  border: 1px solid var(--gray-border);
+  border-radius: 10px;
+  background: #f7f8fa;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.location-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.location-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--red-accent);
+}
+
+.gps-status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background: #fff3cd;
+  color: #856404;
+}
+
+.gps-status.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.gps-status.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.location-details {
+  font-size: 0.8rem;
+  color: #606770;
+  line-height: 1.35;
+  background: #ffffff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px dashed #cbd5e1;
+}
+
+.location-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-gps-auto {
+  flex: 1;
+  background: #e7f3ff;
+  color: #1877f2;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+
+.btn-gps-auto:hover {
+  background: #dbe7f2;
+}
+
+.fb-guide-steps {
+  background: #fff8e6;
+  border-left: 4px solid #ffcc00;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.fb-guide-steps h4 {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #856404;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.fb-guide-steps ol {
+  padding-left: 18px;
+  font-size: 0.76rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.fb-guide-steps li {
+  margin-bottom: 3px;
+}
+
+.fb-modal-footer {
+  padding: 12px 16px;
+  border-top: 1px solid var(--gray-border);
+  background: #ffffff;
+}
+
+.fb-submit-btn {
+  width: 100%;
+  background: #25d366;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+  transition: background 0.2s;
+}
+
+.fb-submit-btn:hover {
+  background: #20bd5a;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+  .top-bar-right, .social-icons { display: none !important; }
+  .hamburger-btn { display: block !important; }
+  .navbar { position: relative; }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--blue-dark);
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 25px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    pointer-events: none;
+  }
+  .nav-links.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+  }
+  .hero-slide.active { flex-direction: column; text-align: center; padding: 20px; }
+  .hero-title { font-size: 1.8rem; }
+  .btn-pill { width: 80%; text-align: center; }
+  .fb-incident-selector { grid-template-columns: 1fr; }
 }
