@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protección Civil y Gestión de Riesgos</title>
+  
+  <!-- Tipografía Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Iconos FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 1. CINTILLO SUPERIOR INSTITUCIONAL -->
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Logo_Gobierno_Bolivariano_de_Venezuela.png" alt="Gobierno Bolivariano" class="logo-gobierno">
+      <div class="divider"></div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Proteccion_Civil_Venezuela.png/240px-Proteccion_Civil_Venezuela.png" alt="Protección Civil" class="logo-institucion-top">
+    </div>
+    <div class="top-bar-right">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Logo_Bicentenario_Venezuela.png" alt="Bicentenario" class="logo-bicentenario">
+    </div>
+  </header>
+
+  <!-- 2. BANNER PRINCIPAL CON FORMAS ORGÁNICAS (HERO) -->
+  <section class="hero-banner">
+    <!-- Formas de fondo amarillo y rojo estilo SAREN -->
+    <div class="shape-yellow"></div>
+    <div class="shape-red"></div>
+
+    <!-- Menú de Navegación -->
+    <nav class="navbar">
+      <div class="brand-logo">
+        <div class="icon-box">PC</div>
+        <span class="brand-title">protección civil</span>
+      </div>
+
+      <!-- BOTÓN HAMBURGUESA -->
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios <i class="fa-solid fa-chevron-down"></i></a></li>
+        <li><a href="#prevencion">Prevención</a></li>
+        <li><a href="#nosotros">Quiénes Somos <i class="fa-solid fa-chevron-down"></i></a></li>
+        <li><a href="#contacto">Contactos</a></li>
+        <li><a href="javascript:void(0)" id="reportEmergencyBtn" class="btn-pill">Reportar Emergencia</a></li>
+        <li><a href="#alertas" class="btn-pill">Alertas en Línea</a></li>
+      </ul>
+
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </nav>
+    <div class="nav-divider"></div>
+
+    <!-- Slider / Carrusel de Noticias -->
+    <div class="slider-container">
+      <button class="arrow-btn prev" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+
+      <div class="slides-wrapper">
+        <!-- Diapositiva 1 -->
+        <div class="hero-slide active">
+          <div class="slide-text-content">
+            <h1 class="hero-title">PREVENCIÓN Y ACCIÓN, TU SEGURIDAD ES PRIMERO</h1>
+            <p class="hero-description">Monitoreo constante, atención prehospitalaria y gestión de riesgos ante cualquier eventualidad.</p>
+          </div>
+          <div class="slide-image-content">
+            <img src="https://pngimg.com/uploads/rescue/rescue_PNG30.png" alt="Personal de Protección Civil" class="person-img">
+          </div>
+        </div>
+
+        <!-- Diapositiva 2 -->
+        <div class="hero-slide">
+          <div class="slide-text-content">
+            <h1 class="hero-title">CAPACITACIÓN COMUNITARIA CONSTANTE</h1>
+            <p class="hero-description">Formamos comunidades resilientes preparadas para la evacuación y primeros auxilios.</p>
+          </div>
+          <div class="slide-image-content">
+            <img src="https://pngimg.com/uploads/firefighter/firefighter_PNG42.png" alt="Bombero / Rescatista" class="person-img">
+          </div>
+        </div>
+      </div>
+
+      <button class="arrow-btn next" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- 3. SECCIÓN DE SERVICIOS PRINCIPALES -->
+  <section class="services-section" id="servicios">
+    <h2 class="section-title">Servicios Principales</h2>
+
+    <div class="cards-container">
+      <div class="service-card">
+        <div class="card-icon"><i class="fa-solid fa-truck-medical"></i></div>
+        <h3>Atención Prehospitalaria</h3>
+        <p>Despliegue rápido de unidades de ambulancia y paramédicos para la evaluación y traslado de emergencias médicas.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+        <h3>Evaluación de Riesgos (EDAN)</h3>
+        <p>Inspección técnica de comunidades e infraestructuras propensas a deslizamientos, inundaciones o fallas estructurales.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon"><i class="fa-solid fa-users-rays"></i></div>
+        <h3>Gestión de Capacitación</h3>
+        <p>Cursos de primeros auxilios, control de incendios y simulacros organizados para empresas, escuelas y comunidades.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <h3>Alertas Tempranas</h3>
+        <p>Monitoreo hidrometeorológico permanente para informar de forma oportuna la activación de protocolos de emergencia.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
